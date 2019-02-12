@@ -1,0 +1,24 @@
+{
+  "name": "fullstackrepo",
+  "version": "1.0.0",
+  "description": "Full-Stack Development",
+  "main": "index.html",
+  "scripts": {
+	"start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfeldman24/fullstackRepo.git"
+  },
+  "author": "Joshua Feldman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfeldman24/fullstackRepo/issues"
+  },
+  "homepage": "https://github.com/jfeldman24/fullstackRepo#readme",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
