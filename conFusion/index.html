@@ -4,7 +4,7 @@
 <head>
 	<!--Required meta tags always come first-->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 	<!--Bootstrap CSS-->
@@ -30,9 +30,7 @@
 					<li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                        <span class="fa fa-sign-in"></span> Login
-                    </a>
+                    <a  id="loginButton"><span class="fa fa-sign-in"></span> Login</a>
                 </span>
 			</div>
 		</div>
@@ -41,8 +39,8 @@
     <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
-                <div class="modal-header bg-warning">
-                    <h4 class="modal-title text-white"><strong>Reserve a Table</strong></h4>
+                <div class="modal-header">
+                    <h4 class="modal-title"><strong>Reserve a Table</strong></h4>
                     <button type="button" class="close" data-dismiss="modal">
                         &times;
                     </button>
@@ -144,8 +142,7 @@
 					<img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class ="col col-sm align-self-center">
-                    <a role="button" class="btn btn-warning btn-block nav-link"
-                    data-toggle="modal" data-target="#reserveModal">Reserve a Table</a>
+                    <a role="button" class="btn btn-warning btn-block nav-link" id="reserveButton">Reserve a Table</a>
                 </div>
             </div>
         </div>
@@ -298,11 +295,20 @@
                     $('#mycarousel').carousel('pause');
                     $(this).children('span').removeClass('fa-pause');
                     $(this).children('span').addClass('fa-play');
-                } else {
+                } else if($('#carouselButton').children('span').hasClass('fa-play')){
                     $('#mycarousel').carousel('cycle');
                     $(this).children('span').removeClass('fa-play');
                     $(this).children('span').addClass('fa-pause');
                 };
+            });
+
+            //Modal Scripts:
+            //Used 'Show' instead of toggle bc buttons cannot not be pushed if modals are showing
+            $('#loginButton').click(function() {
+                $('#loginModal').modal('show');
+            });
+            $('#reserveButton').click(function() {
+                $('#reserveModal').modal('show');
             });
         });
     </script>
